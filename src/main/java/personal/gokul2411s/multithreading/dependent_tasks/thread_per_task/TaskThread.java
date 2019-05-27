@@ -24,6 +24,7 @@ final class TaskThread extends Thread {
   public void run() {
     for (TaskThread blocker : blockers) {
       try {
+        // assumes that the blocker thread has started by this point in time.
         blocker.join();
         LoggingQueue.INSTANCE.put(task + " completed waiting for " + blocker.task);
       } catch (InterruptedException e) {
