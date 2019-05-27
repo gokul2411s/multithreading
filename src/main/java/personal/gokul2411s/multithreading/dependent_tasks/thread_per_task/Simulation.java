@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Map;
 import personal.gokul2411s.multithreading.dependent_tasks.Tasks;
 import personal.gokul2411s.multithreading.dependent_tasks.Task;
+import personal.gokul2411s.multithreading.logging.LoggingQueue;
 
 public class Simulation {
 
   public static void main(String[] args) throws InterruptedException {
+
+    LoggingQueue.INSTANCE.activateLogging();
 
     Map<Task, List<Task>> taskBlockers = Tasks.generate(10);
     Map<Task, TaskThread> taskThreads = new HashMap<>();
@@ -33,6 +36,8 @@ public class Simulation {
     for (TaskThread taskThread : taskThreads.values()) {
       taskThread.join();
     }
+
+    LoggingQueue.INSTANCE.deactivateLogging();
   }
 
   private Simulation() {
