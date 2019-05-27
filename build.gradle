@@ -41,3 +41,4 @@ def createScript(project, mainClass, name) {
 startScripts.enabled = false
 run.enabled = false
 createScript(project, 'personal.gokul2411s.multithreading.dependent_tasks.thread_per_task.Simulation', 'dependent-tasks-thread-per-task-simulation')
+createScript(project, 'personal.gokul2411s.multithreading.dependent_tasks.fixed_number_of_threads.Simulation', 'dependent-tasks-fixed-number-of-threads-simulation')
