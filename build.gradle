@@ -33,6 +33,10 @@ def createScript(project, mainClass, name) {
         mainClassName = mainClass
         applicationName = name
         classpath = project.tasks[JavaPlugin.JAR_TASK_NAME].outputs.files + project.configurations.runtime
+
+        doLast {
+            unixScript.text = unixScript.text.replace('DEFAULT_JVM_OPTS=""', 'DEFAULT_JVM_OPTS="-DXmx=8G"')
+        }
     }
     project.tasks[name].dependsOn(project.jar)
 
@@ -48,3 +52,6 @@ startScripts.enabled = false
 run.enabled = false
 createScript(project, 'personal.gokul2411s.multithreading.dependent_tasks.thread_per_task.Simulation', 'dependent-tasks-thread-per-task-simulation')
 createScript(project, 'personal.gokul2411s.multithreading.dependent_tasks.fixed_number_of_threads.Simulation', 'dependent-tasks-fixed-number-of-threads-simulation')
+
+createScript(project, 'personal.gokul2411s.multithreading.parallel.reduction.Simulation', 'parallel-reduction-simulation')
+
