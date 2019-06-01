@@ -55,3 +55,5 @@ createScript(project, 'personal.gokul2411s.multithreading.dependent_tasks.fixed_
 
 createScript(project, 'personal.gokul2411s.multithreading.parallel.reduction.Simulation', 'parallel-reduction-simulation')
 
+createScript(project, 'personal.gokul2411s.multithreading.producer_consumer.Simulation', 'producer-consumer-simulation')
+
