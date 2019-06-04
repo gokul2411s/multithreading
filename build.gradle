@@ -57,3 +57,5 @@ createScript(project, 'personal.gokul2411s.multithreading.parallel.reduction.Sim
 
 createScript(project, 'personal.gokul2411s.multithreading.producer_consumer.Simulation', 'producer-consumer-simulation')
 
+createScript(project, 'personal.gokul2411s.multithreading.dining_philosophers.Simulation', 'dining-philosophers-simulation')
+
